@@ -1,13 +1,14 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 def plot_poisson_distribution(mu):
   """
   Plots the Poisson distribution with a given mean (mu).
   """
   x = np.arange(0, 30, 1)  # Range of x-axis (adjustable if needed)
-  x_array = np.array([np.math.factorial(xx) for xx in x])
+  x_array = np.array([math.factorial(xx) for xx in x])
   y = np.exp(-mu) * (mu**x) / x_array  # Poisson probability mass function
   fig, ax = plt.subplots(figsize=(8, 5))
   ax.bar(x, y, color='skyblue', edgecolor='black')  # Plot bars
